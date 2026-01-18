@@ -8,7 +8,9 @@ if __name__ == "__main__":
 
     print(n - 1, end='')
 
-    if n == 2:
+    if n == 0:
+        print(" arguments.")
+    elif n == 2:
         print(" argument:")
     else:
         print(" arguments:")
