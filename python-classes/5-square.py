@@ -43,7 +43,11 @@ class Square:
 
     def my_print(self):
         """print squared based on its size"""
+        if self.__size == 0:
+            print()
+            return
+
         for i in range(self.__size):
-            for i in range(self.__size):
+            for i in range(self.size):
                 print("#", end="")
             print()
