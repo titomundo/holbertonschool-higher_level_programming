@@ -1,0 +1,22 @@
+Test for 7-base_geometry
+
+Use of integer_validator 
+
+add module
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+create variable
+	>>> bg = BaseGeometry()
+	
+validate with integer
+	>>> bg.integer_validator("my_int", 42)
+
+validate with True 
+	>>> bg.integer_validator("my_int", True)
+
+validate with string 
+	>>> try:
+	... 	bg.integer_validator("my_int", "42")
+	... except Exception as e:
+	... 	print(f"TypeError: {e}")	
+	TypeError: my_int must be an integer
