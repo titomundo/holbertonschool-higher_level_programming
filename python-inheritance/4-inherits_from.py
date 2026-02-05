@@ -12,10 +12,10 @@ def inherits_from(obj, a_class):
     Args:
         obj (instance): object to inspect
         a_class (class): class name to compare to obj"""
-    
+
     c = obj.__class__
 
-    if not c is a_class and issubclass(c, a_class):
+    if c is not a_class and issubclass(c, a_class):
         return True
     else:
         return False
