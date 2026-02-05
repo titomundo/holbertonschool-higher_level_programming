@@ -14,7 +14,7 @@ def is_kind_of_class(obj, a_class):
         obj (instance): object to inspect
         a_class (class): class name to compare to obj"""
 
-    if obj.__class__ is a_class or obj.__class__ in a_class.__subclasses__():
+    if obj.__class__ is a_class or issubclass(obj.__class__, a_class):
         return True
     else:
         return False
