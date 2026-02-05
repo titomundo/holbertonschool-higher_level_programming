@@ -30,6 +30,8 @@ add negative values and sort
 print_sorted returns a new list
 	>>> new_list = my_list.print_sorted()
 	[-9, -1, 1, 2, 3, 4, 5]
+	>>> print(new_list)
+	None
 
 empty list and sort
 	>>> my_list.clear()
