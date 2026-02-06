@@ -12,7 +12,11 @@ validate with integer
 	>>> bg.integer_validator("my_int", 42)
 
 validate with True 
-	>>> bg.integer_validator("my_int", True)
+	>>> try:
+	... 	bg.integer_validator("my_int", True)
+	... except Exception as e:
+	... 	print(f"TypeError: {e}")	
+	TypeError: my_int must be an integer
 
 validate with string 
 	>>> try:
