@@ -8,6 +8,13 @@ add module
 create variable
 	>>> bg = BaseGeometry()
 
+test area() method
+	>>> try:
+	... 	bg.area() 
+	... except Exception as e:
+	... 	print(f"Exception: {e}")	
+	Exception: area() is not implemented
+
 validate with integer
 	>>> bg.integer_validator("my_int", 42)
 
