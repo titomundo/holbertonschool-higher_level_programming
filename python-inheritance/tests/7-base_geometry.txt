@@ -7,7 +7,7 @@ add module
 
 create variable
 	>>> bg = BaseGeometry()
-	
+
 validate with integer
 	>>> bg.integer_validator("my_int", 42)
 
@@ -30,14 +30,14 @@ validate with no parameters
 	... 	bg.integer_validator()
 	... except Exception as e:
 	... 	print(f"TypeError: {e}")	
-	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 validate with only name
 	>>> try:
 	... 	bg.integer_validator("name")
 	... except Exception as e:
 	... 	print(f"TypeError: {e}")	
-	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 validate with True 
 	>>> try:
