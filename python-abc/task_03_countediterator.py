@@ -19,9 +19,9 @@ class CountedIterator:
     def __next__(self):
         """Override the __next__ method to increase the counter attribute"""
 
-        n = self.iterator
+        n = next(self.iterator)
         self.counter += 1
-        return next(n)
+        return n
 
     def get_count(self):
         """Return the counter of the iterator"""
