@@ -12,6 +12,10 @@ class CountedIterator:
         self.iterator = iter(iterable)
         self.counter = 0
 
+    def __iter__(self):
+        """Return the iterable"""
+        return self
+
     def __next__(self):
         """Override the __next__ method to increase the counter attribute"""
 
