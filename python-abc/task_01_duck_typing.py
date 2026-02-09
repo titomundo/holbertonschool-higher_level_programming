@@ -52,5 +52,9 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
+    """shape_info: returns the dimensions of a shape instance
+    Args:
+        shape (Shape): shape instance to inspect"""
+
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
