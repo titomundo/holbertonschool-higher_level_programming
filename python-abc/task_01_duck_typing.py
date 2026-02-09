@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-"""task_00_abc: Animals Module"""
+"""task_01_duck_typing: Shapes Module"""
 
 from abc import ABC, abstractmethod
-from math import pi
 
 
 class Shape(ABC):
@@ -27,11 +26,11 @@ class Circle(Shape):
 
     def area(self):
         """Returns the area of a circle shape"""
-        return pi * (self.radius ** 2)
+        return 3.141592653589793 * (self.radius ** 2)
 
     def perimeter(self):
         """Returns the perimeter of a circle shape"""
-        return pi * self.radius * 2
+        return 3.141592653589793 * self.radius * 2
 
 
 class Rectangle(Shape):
