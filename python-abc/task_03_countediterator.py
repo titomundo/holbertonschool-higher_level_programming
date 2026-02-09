@@ -8,17 +8,15 @@ class CountedIterator:
 
     def __init__(self, iterable):
         """Constructor method"""
-        self.iter = iter(iterable)
+
+        self.iterator = iter(iterable)
         self.counter = 0
 
     def __next__(self):
         """Override the __next__ method to increase the counter attribute"""
-        self.counter += 1
 
-        try:
-            return next(self.iter)
-        except StopIteration:
-            raise StopIteration()
+        self.counter += 1
+        return next(self.iterator)
 
     def get_count(self):
         """Return the counter of the iterator"""
