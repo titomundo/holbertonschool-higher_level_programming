@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """task_03_countediterator: CounterIterator Module"""
 
@@ -19,8 +19,9 @@ class CountedIterator:
     def __next__(self):
         """Override the __next__ method to increase the counter attribute"""
 
+        n = self.iterator
         self.counter += 1
-        return next(self.iterator)
+        return next(n)
 
     def get_count(self):
         """Return the counter of the iterator"""
