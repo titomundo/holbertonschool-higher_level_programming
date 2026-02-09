@@ -10,10 +10,12 @@ class Shape(ABC):
 
     @abstractmethod
     def area():
+        """area method: not implemented in base class"""
         pass
 
     @abstractmethod
     def perimeter():
+        """perimeter method: not implemented in base class"""
         pass
 
 
