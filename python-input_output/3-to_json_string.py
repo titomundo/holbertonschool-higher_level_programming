@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-2-to_json_string: Return the json string representation of a python object
+3-to_json_string: Return the json string representation of a python object
 """
 from json import dumps
 
