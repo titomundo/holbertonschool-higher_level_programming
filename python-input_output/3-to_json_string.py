@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-from json import dumps
 """
 2-to_json_string: Return the json string representation of a python object
 """
+from json import dumps
 
 
 def to_json_string(my_obj):
