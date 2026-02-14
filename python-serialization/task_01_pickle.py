@@ -49,8 +49,11 @@ class CustomObject:
 
         Returns: CustomObject instance
         """
-        with open(filename, mode="rb") as f:
-            return load(f)
+        try:
+            with open(filename, mode="rb") as f:
+                return load(f)
+        except FileNotFoundError:
+            return None
 
     def display(self):
         """displays data from the object in a simple format"""
