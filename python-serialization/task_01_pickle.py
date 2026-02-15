@@ -39,7 +39,7 @@ class CustomObject:
         try:
             with open(filename, mode="wb") as f:
                 dump(self, f)
-        except (FileNotFoundError, PicklingError):
+        except Exception:
             return None
 
     @classmethod
@@ -60,7 +60,7 @@ class CustomObject:
 
                 return None
 
-        except (FileNotFoundError, UnpicklingError):
+        except Exception:
             return None
 
     def display(self):
