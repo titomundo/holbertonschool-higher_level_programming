@@ -53,7 +53,13 @@ class CustomObject:
         """
         try:
             with open(filename, mode="rb") as f:
-                return load(f)
+                my_obj = load(f)
+
+                if not isinstance(obj, cls):
+                    return None
+
+                return my_obj
+
         except (FileNotFoundError, UnpicklingError):
             return None
 
