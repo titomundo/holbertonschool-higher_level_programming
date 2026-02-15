@@ -55,7 +55,7 @@ class CustomObject:
             with open(filename, mode="rb") as f:
                 my_obj = load(f)
 
-                if isinstance(obj, cls):
+                if isinstance(my_obj, cls):
                     return my_obj
 
                 return None
