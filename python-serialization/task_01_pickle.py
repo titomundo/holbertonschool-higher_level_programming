@@ -55,10 +55,10 @@ class CustomObject:
             with open(filename, mode="rb") as f:
                 my_obj = load(f)
 
-                if not isinstance(obj, cls):
-                    return None
+                if isinstance(obj, cls):
+                    return my_obj
 
-                return my_obj
+                return None
 
         except (FileNotFoundError, UnpicklingError):
             return None
