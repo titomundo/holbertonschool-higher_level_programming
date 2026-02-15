@@ -4,8 +4,7 @@
 Serialize and deserialize objects in python using the pickle module
 """
 
-import json
-from pickle import dump, load
+from pickle import PicklingError, UnpicklingError, dump, load
 
 
 class CustomObject:
@@ -37,8 +36,11 @@ class CustomObject:
         Args:
             filename (string): file to write object data into
         """
-        with open(filename, mode="wb") as f:
-            dump(self, f)
+        try:
+            with open(filename, mode="wb") as f:
+                dump(self, f)
+        except (FileNotFoundError, PicklingError):
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -52,7 +54,7 @@ class CustomObject:
         try:
             with open(filename, mode="rb") as f:
                 return load(f)
-        except FileNotFoundError:
+        except (FileNotFoundError, UnpicklingError):
             return None
 
     def display(self):
