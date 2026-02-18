@@ -17,15 +17,16 @@ def fetch_and_print_posts():
         print(entry["title"])
 
 
-r = requests.get("https://jsonplaceholder.typicode.com/posts/")
+def fetch_and_save_posts():
+    r = requests.get("https://jsonplaceholder.typicode.com/posts/")
 
-with open("posts.csv", "w", encoding="utf-8", newline="") as csvfile:
-    jdata = r.json()
-    headers = ["id", "title", "body"]
-    writer = csv.DictWriter(csvfile, headers)
+    with open("posts.csv", "w", encoding="utf-8", newline="") as csvfile:
+        jdata = r.json()
+        headers = ["id", "title", "body"]
+        writer = csv.DictWriter(csvfile, headers)
 
-    writer.writeheader()
+        writer.writeheader()
 
-    for entry in jdata:
-        entry.pop("userId")
-        writer.writerow(entry)
+        for entry in jdata:
+            entry.pop("userId")
+            writer.writerow(entry)
