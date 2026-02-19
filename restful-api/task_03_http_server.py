@@ -4,7 +4,6 @@
 Create a simple http server using python
 """
 import http.server
-import websockets
 import json
 
 
