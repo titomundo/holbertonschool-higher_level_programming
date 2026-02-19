@@ -16,7 +16,6 @@ class SimpleServer(http.server.BaseHTTPRequestHandler):
     """
 
     data = {"name": "John", "age": 30, "city": "New York"}
-    desc = {"version": "1.0", "description": "A simple API using http.server"}
 
     def do_GET(self):
         path = self.path
@@ -24,6 +23,7 @@ class SimpleServer(http.server.BaseHTTPRequestHandler):
         if path == "/":
             self.send_response(200)
             self.end_headers()
+            self.send_header("Content-Type", "text/plain")
             self.wfile.write(bytes("Hello, this is a simple API!\n", "utf-8"))
         elif path == "/data":
             self.send_response(200)
@@ -31,10 +31,15 @@ class SimpleServer(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps(self.data).encode("utf-8") + b"\n")
         elif path == "/status":
-            self.send_response_only(200, "OK")
+            self.send_response(200, "OK")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
+            self.wfile.write(bytes("OK\n", "utf-8"))
         else:
-            self.send_error(404, "Endpoint not found")
+            self.send_response(404, "Not Found")
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(bytes("Endpoint not found\n", "utf-8"))
 
 
 def run(PORT=8000):
