@@ -24,7 +24,7 @@ class SimpleServer(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(bytes("Hello, this is a simple API!\n", "utf-8"))
+            self.wfile.write(bytes("Hello, this is a simple API!", "utf-8"))
         elif path == "/data":
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -34,12 +34,12 @@ class SimpleServer(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(bytes("OK\n", "utf-8"))
+            self.wfile.write(bytes("OK", "utf-8"))
         else:
             self.send_response(404)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(bytes("Endpoint not found\n", "utf-8"))
+            self.wfile.write(bytes("Endpoint not found", "utf-8"))
 
 
 def run(PORT=8000):
