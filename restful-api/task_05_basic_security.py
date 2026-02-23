@@ -43,6 +43,11 @@ def verify_password(username, password):
         return username
 
 
+@jwt.invalid_token_loader
+def handle_invalid_token(err):
+    return jsonify({"error": "Invalid Token"}), 401
+
+
 @app.route("/basic-protected")
 @auth.login_required
 def basic_protected():
