@@ -17,7 +17,7 @@ def db_connection():
     )
     c = db.cursor()
 
-    c.execute("""SELECT * FROM states WHERE name LIKE 'N%'""")
+    c.execute("""SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC""")
     result = c.fetchall()
 
     for i in result:
