@@ -10,7 +10,7 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
-    dburl = f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost/{argv[3]}"
+    dburl = f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}"
     engine = create_engine(dburl)
     Session = sessionmaker(bind=engine)
     session = Session()
