@@ -12,8 +12,10 @@ from model_state import Base, State
 if __name__ == "__main__":
     dburl = f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost/{argv[3]}"
     engine = create_engine(dburl)
-    result = engine.execute("SELECT * FROM states ORDER BY states.id ASC")
-    states = result.fetchall()
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    for state in states:
-        print(f"{state[0]}: {state[1]}")
+    for instance in session.query(State).order_by(State.id):
+        print(f"{instance.id}: {instance.name}")
+
+    session.close()
