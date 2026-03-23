@@ -2,8 +2,8 @@
 
 const args = process.argv;
 
-args.forEach((element, i) => {
-  if (i > 1) {
-    console.log(element);
-  }
-});
+if (args[2] != null) {
+  console.log(args[2]);
+} else {
+  console.log('No argument');
+}
