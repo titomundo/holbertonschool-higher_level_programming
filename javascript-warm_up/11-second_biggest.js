@@ -12,7 +12,7 @@ list.sort((a, b) => {
 });
 
 if (list.length < 2) {
-  console.log(1);
+  console.log(0);
 } else {
   console.log(list[list.length - 2]);
 }
